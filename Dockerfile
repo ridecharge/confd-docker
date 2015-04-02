@@ -1,7 +1,6 @@
 # Latest Ubuntu LTS
 FROM ubuntu:14.04
 
-# Install nginx
 RUN apt-get update && \
 	apt-get -y upgrade
 
@@ -11,6 +10,6 @@ RUN chmod 0500 /usr/bin/confd
 RUN mkdir -p /etc/confd/conf.d
 RUN mkdir -p /etc/confd/templates
 
-# Nginx and Confd config files
-ONBUILD COPY *.conf /etc/nginx/
-ONBUILD COPY *.toml /etc/confd/
+# confd config files
+ONBUILD COPY *.tmpl /etc/confd/templates/
+ONBUILD COPY *.toml /etc/confd/conf.d/
