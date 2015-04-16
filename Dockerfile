@@ -13,3 +13,4 @@ RUN mkdir -p /etc/confd/templates
 # confd config files
 ONBUILD COPY *.tmpl /etc/confd/templates/
 ONBUILD COPY *.toml /etc/confd/conf.d/
+
