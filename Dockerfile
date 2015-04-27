@@ -1,5 +1,5 @@
 # Latest Ubuntu LTS
-FROM ubuntu:14.04
+FROM ubuntu:14.04.02
 
 RUN apt-get update && \
 	apt-get -y upgrade

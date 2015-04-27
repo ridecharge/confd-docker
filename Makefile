@@ -1,10 +1,13 @@
 DOCKER_REPO?=registry.gocurb.internal:80
 CONTAINER=$(DOCKER_REPO)/confd
 
-all: build push
+all: build push clean
 
 build:
-	sudo docker build -t $(CONTAINER):latest . 
+	docker build --no-cache -t $(CONTAINER):latest . 
 
 push:
-	sudo docker push $(CONTAINER)
+	docker push $(CONTAINER)
+
+clean:
+	docker rmi $(CONTAINER)
